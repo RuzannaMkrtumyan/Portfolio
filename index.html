@@ -4,57 +4,47 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ruzanna Mkrtumyan | UI/UX Designer & Frontend Developer</title>
-    <meta name="description" content="Professional UI/UX Designer and Frontend Developer specializing in HTML, CSS, and JavaScript.">
-    
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
-    
     <!-- Font Awesome for Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-
     <style>
         :root {
-            --bg-primary: #0f172a;
-            --bg-secondary: #1e293b;
-            --text-primary: #f8fafc;
-            --text-secondary: #94a3b8;
-            --accent: #6366f1;
-            --accent-hover: #4f46e5;
-            --gradient: linear-gradient(135deg, #6366f1 0%, #a855f7 100%);
+            --primary-color: #8b5cff;
+            --secondary-color: #6366f1;
+            --text-color: #f8f8ff;
+            --text-muted: #9aa1a6;
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
         }
-
+        
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
-
+        
         html {
             scroll-behavior: smooth;
         }
-
+        
         body {
-            font-family: 'Inter', sans-serif;
-            background-color: var(--bg-primary);
-            color: var(--text-primary);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
             line-height: 1.6;
-            overflow-x: hidden;
         }
-
+        
         /* Navigation */
         nav {
             position: fixed;
             top: 0;
             width: 100%;
-            background: rgba(15, 23, 42, 0.9);
+            background: rgba(15, 23, 42, 0.95);
             backdrop-filter: blur(10px);
-            z-index: 1000;
-            padding: 1rem 5%;
             border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 1.5rem 5%;
+            z-index: 1000;
         }
-
+        
         .nav-container {
             max-width: 1200px;
             margin: 0 auto;
@@ -62,172 +52,162 @@
             justify-content: space-between;
             align-items: center;
         }
-
+        
         .logo {
-            font-family: 'Playfair Display', serif;
             font-size: 1.5rem;
             font-weight: 700;
-            background: var(--gradient);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
+            color: var(--primary-color);
         }
-
+        
         .nav-links {
             display: flex;
-            gap: 2rem;
+            gap: 2.5rem;
             list-style: none;
         }
-
+        
         .nav-links a {
-            color: var(--text-secondary);
+            color: var(--text-muted);
             text-decoration: none;
             font-weight: 500;
-            transition: color 0.3s ease;
+            transition: color 0.3s;
         }
-
+        
         .nav-links a:hover {
-            color: var(--text-primary);
+            color: var(--text-color);
         }
-
+        
         /* Hero Section */
         .hero {
             min-height: 100vh;
             display: flex;
             align-items: center;
-            justify-content: center;
-            padding: 6rem 5% 4rem;
-            position: relative;
+            padding: 8rem 5% 4rem;
         }
-
+        
         .hero-container {
             max-width: 1200px;
+            margin: 0 auto;
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 4rem;
             align-items: center;
         }
-
+        
         .hero-content h1 {
-            font-family: 'Playfair Display', serif;
             font-size: 3.5rem;
-            line-height: 1.1;
             margin-bottom: 1rem;
+            line-height: 1.2;
         }
-
+        
         .hero-content .highlight {
-            background: var(--gradient);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
+            color: var(--primary-color);
         }
-
+        
         .hero-content h2 {
-            font-size: 1.5rem;
-            color: var(--text-secondary);
+            font-size: 1.375rem;
+            color: var(--text-muted);
             font-weight: 400;
             margin-bottom: 1.5rem;
         }
-
+        
         .hero-content p {
-            color: var(--text-secondary);
+            color: var(--text-muted);
             font-size: 1.1rem;
             margin-bottom: 2rem;
             max-width: 500px;
         }
-
+        
         .hero-image {
-            position: relative;
             display: flex;
             justify-content: center;
         }
-
+        
         .hero-image img {
             width: 350px;
             height: 350px;
             object-fit: cover;
             border-radius: 50%;
-            border: 4px solid transparent;
-            background: var(--gradient) border-box;
-            -webkit-mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
-            mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
-            -webkit-mask-composite: xor;
-            mask-composite: exclude;
-            box-shadow: 0 20px 40px rgba(99, 102, 241, 0.3);
-            animation: float 6s ease-in-out infinite;
+            border: 3px solid var(--primary-color);
+            box-shadow: 0 0 40px rgba(139, 92, 255, 0.3);
+            transition: transform 0.3s ease;
         }
 
-        @keyframes float {
-            0%, 100% { transform: translateY(0px); }
-            50% { transform: translateY(-20px); }
+        .hero-image img:hover {
+            transform: scale(1.02);
         }
-
+        
         .btn {
             display: inline-block;
-            padding: 1rem 2rem;
-            background: var(--gradient);
-            color: white;
-            text-decoration: none;
+            padding: 0.8rem 2rem;
             border-radius: 50px;
+            text-decoration: none;
             font-weight: 600;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            border: none;
+            transition: all 0.3s;
             cursor: pointer;
-            font-size: 1rem;
         }
-
-        .btn:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 10px 20px rgba(99, 102, 241, 0.4);
+        
+        .btn-primary {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
         }
-
-        .btn-outline {
+        
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(139, 92, 255, 0.4);
+        }
+        
+        .btn-secondary {
             background: transparent;
-            border: 2px solid var(--accent);
+            border: 2px solid var(--primary-color);
+            color: var(--primary-color);
             margin-left: 1rem;
         }
-
-        .btn-outline:hover {
-            background: var(--accent);
+        
+        .btn-secondary:hover {
+            background: var(--primary-color);
+            color: white;
         }
-
+        
+        .buttons {
+            display: flex;
+            gap: 1rem;
+        }
+        
         /* Sections General */
         section {
             padding: 5rem 5%;
         }
-
+        
         .section-title {
-            font-family: 'Playfair Display', serif;
             font-size: 2.5rem;
-            text-align: center;
             margin-bottom: 3rem;
-            position: relative;
+            text-align: center;
         }
-
+        
         .section-title::after {
             content: '';
             display: block;
             width: 60px;
-            height: 4px;
-            background: var(--gradient);
+            height: 3px;
+            background: var(--primary-color);
             margin: 1rem auto 0;
-            border-radius: 2px;
         }
 
         /* About Section */
         .about {
-            background: var(--bg-secondary);
+            background-color: var(--card-bg);
+            text-align: center;
         }
 
         .about-content {
             max-width: 800px;
             margin: 0 auto;
-            text-align: center;
-            color: var(--text-secondary);
+            color: var(--text-muted);
             font-size: 1.1rem;
+            line-height: 1.8;
         }
-
-        /* Skills Section */
+        
+        /* Skills / Expertise Section */
         .skills-grid {
             max-width: 1000px;
             margin: 0 auto;
@@ -235,201 +215,183 @@
             grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
             gap: 2rem;
         }
-
+        
         .skill-card {
-            background: var(--bg-secondary);
-            padding: 2rem;
-            border-radius: 16px;
+            background-color: var(--card-bg);
+            padding: 2rem 1.5rem;
+            border-radius: 12px;
             text-align: center;
-            transition: transform 0.3s ease;
             border: 1px solid rgba(255, 255, 255, 0.05);
+            transition: transform 0.3s, border-color 0.3s;
         }
-
+        
         .skill-card:hover {
             transform: translateY(-5px);
-            border-color: var(--accent);
+            border-color: var(--primary-color);
         }
-
+        
         .skill-card i {
             font-size: 2.5rem;
             margin-bottom: 1rem;
-            background: var(--gradient);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
+            color: var(--primary-color);
         }
-
+        
         .skill-card h3 {
+            font-size: 1.2rem;
             margin-bottom: 0.5rem;
         }
-
+        
         .skill-card p {
-            color: var(--text-secondary);
+            color: var(--text-muted);
             font-size: 0.9rem;
         }
-
+        
         /* Projects Section */
         .projects {
-            background: var(--bg-secondary);
+            background-color: var(--card-bg);
         }
-
+        
         .projects-grid {
             max-width: 1200px;
             margin: 0 auto;
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 2rem;
         }
-
+        
         .project-card {
-            background: var(--bg-primary);
-            border-radius: 16px;
+            background-color: var(--bg-color);
+            border-radius: 12px;
             overflow: hidden;
-            border: 1px solid rgba(255, 255, 255, 0.05);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
         }
-
+        
         .project-card:hover {
-            transform: translateY(-10px);
+            transform: translateY(-5px);
             box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
         }
-
+        
         .project-image {
-            height: 200px;
-            background: var(--gradient);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 3rem;
-            color: rgba(255, 255, 255, 0.2);
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
         }
-
+        
         .project-info {
             padding: 1.5rem;
         }
-
+        
         .project-info h3 {
-            margin-bottom: 0.5rem;
             font-size: 1.25rem;
+            margin-bottom: 0.5rem;
         }
-
+        
         .project-info p {
-            color: var(--text-secondary);
+            color: var(--text-muted);
             font-size: 0.95rem;
             margin-bottom: 1.5rem;
         }
-
+        
         .project-link {
-            color: var(--accent);
+            color: var(--primary-color);
             text-decoration: none;
             font-weight: 600;
             display: inline-flex;
             align-items: center;
             gap: 0.5rem;
-            transition: gap 0.3s ease;
+            transition: gap 0.3s;
         }
-
+        
         .project-link:hover {
             gap: 0.8rem;
         }
-
+        
         /* Contact Section */
         .contact {
             text-align: center;
-            padding: 6rem 5%;
         }
-
+        
         .contact p {
-            color: var(--text-secondary);
+            color: var(--text-muted);
             max-width: 600px;
             margin: 0 auto 2rem;
             font-size: 1.1rem;
         }
-
+        
         .whatsapp-btn {
             display: inline-flex;
             align-items: center;
             gap: 0.75rem;
             background: #25D366;
             color: white;
-            padding: 1.25rem 2.5rem;
+            padding: 1rem 2.5rem;
             border-radius: 50px;
             text-decoration: none;
-            font-size: 1.2rem;
             font-weight: 700;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            font-size: 1.1rem;
+            transition: all 0.3s;
             box-shadow: 0 10px 30px rgba(37, 211, 102, 0.3);
         }
-
+        
         .whatsapp-btn:hover {
-            transform: translateY(-5px) scale(1.05);
+            transform: translateY(-3px);
             box-shadow: 0 15px 40px rgba(37, 211, 102, 0.4);
         }
-
+        
         /* Footer */
         footer {
-            background: var(--bg-secondary);
+            background-color: var(--card-bg);
             text-align: center;
             padding: 2rem;
-            color: var(--text-secondary);
-            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            color: var(--text-muted);
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
         }
-
-        /* Mobile Responsive */
+        
+        /* Responsive */
         @media (max-width: 768px) {
             .hero-container {
                 grid-template-columns: 1fr;
                 text-align: center;
-                gap: 2rem;
             }
-
+            
             .hero-content h1 {
                 font-size: 2.5rem;
             }
-
+            
             .hero-image img {
                 width: 250px;
                 height: 250px;
             }
-
+            
             .nav-links {
-                display: none; /* Can be enhanced with a mobile menu toggle if needed */
-            }
-
-            .btn-outline {
-                margin-left: 0;
-                margin-top: 1rem;
+                display: none;
             }
             
-            .hero-buttons {
-                display: flex;
-                flex-direction: column;
-                gap: 1rem;
-                align-items: center;
+            .buttons {
+                justify-content: center;
+                flex-wrap: wrap;
             }
-        }
+            
+            .btn-secondary {
+                margin-left: 0;
+            }
 
-        /* Scroll Reveal Animation */
-        .reveal {
-            opacity: 0;
-            transform: translateY(30px);
-            transition: all 0.8s ease;
-        }
-
-        .reveal.active {
-            opacity: 1;
-            transform: translateY(0);
+            .skills-grid {
+                grid-template-columns: 1fr 1fr;
+            }
         }
     </style>
 </head>
 <body>
-
     <!-- Navigation -->
     <nav>
         <div class="nav-container">
             <div class="logo">Ruzanna.</div>
             <ul class="nav-links">
                 <li><a href="#about">About</a></li>
-                <li><a href="#skills">Skills</a></li>
+                <li><a href="#skills">Expertise</a></li>
                 <li><a href="#projects">Projects</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
@@ -443,32 +405,31 @@
                 <h1>Hi, I'm <span class="highlight">Ruzanna</span></h1>
                 <h2>UI/UX Designer & Frontend Developer</h2>
                 <p>I craft beautiful, user-centric digital experiences. With expertise in HTML, CSS, and JavaScript, I transform complex problems into elegant, intuitive interfaces for clients worldwide.</p>
-                <div class="hero-buttons">
-                    <a href="#projects" class="btn">View My Work</a>
-                    <a href="#contact" class="btn btn-outline">Contact Me</a>
+                <div class="buttons">
+                    <a href="#projects" class="btn btn-primary">View My Work</a>
+                    <a href="#contact" class="btn btn-secondary">Contact Me</a>
                 </div>
             </div>
             <div class="hero-image">
-                <!-- Raw GitHub URL for direct image rendering -->
-                <img src="https://raw.githubusercontent.com/RuzannaMkrtumyan/Portfolio/c031b1b0bb19bda89b5c0d4e904f160e5e8e7b5a/photo_2026-10-22_18-14-46.jpg" alt="Ruzanna Mkrtumyan">
+                <img src="https://raw.githubusercontent.com/RuzannaMkrtumyan/Portfolio/2e58b7fb77f9390ef9b51883056355208cc57f07/photo_2026-10-22_19-46-44.jpg" alt="Ruzanna Mkrtumyan">
             </div>
         </div>
     </section>
 
     <!-- About Section -->
-    <section id="about" class="about reveal">
+    <section id="about" class="about">
         <h2 class="section-title">About Me</h2>
         <div class="about-content">
             <p>I am a passionate UI/UX Designer and Frontend Developer with a proven track record of working with diverse clients across various industries. My approach combines aesthetic sensibility with technical precision. I don't just build websites; I create seamless digital journeys that engage users and drive business results. Whether it's a high-converting landing page or a full-scale e-commerce platform, I bring dedication, creativity, and clean code to every project.</p>
         </div>
     </section>
-
-    <!-- Skills Section -->
-    <section id="skills" class="reveal">
+    
+    <!-- Skills / Expertise Section -->
+    <section id="skills">
         <h2 class="section-title">My Expertise</h2>
         <div class="skills-grid">
             <div class="skill-card">
-                <i class="fab fa-figma"></i>
+                <i class="fas fa-pen-nib"></i>
                 <h3>UI/UX Design</h3>
                 <p>User research, wireframing, prototyping, and creating intuitive, beautiful interfaces.</p>
             </div>
@@ -491,93 +452,64 @@
     </section>
 
     <!-- Projects Section -->
-    <section id="projects" class="projects reveal">
-        <h2 class="section-title">Featured Projects</h2>
+    <section id="projects" class="projects">
+        <h2 class="section-title">My Projects</h2>
         <div class="projects-grid">
             <!-- Project 1 -->
             <div class="project-card">
-                <div class="project-image">
-                    <i class="fas fa-dumbbell"></i>
-                </div>
+                <img src="https://raw.githubusercontent.com/RuzannaMkrtumyan/Portfolio/2e58b7fb77f9390ef9b51883056355208cc57f07/Screenshot%202026-10-22%20230542.png" alt="Ironforge Fitness" class="project-image">
                 <div class="project-info">
                     <h3>Ironforge Fitness</h3>
-                    <p>A dynamic, responsive fitness website showcasing modern UI/UX principles, clean layout, and engaging user interaction.</p>
+                    <p>A dynamic fitness website with modern UI/UX design and responsive layout.</p>
                     <a href="https://ruzannamkrtumyan.github.io/IRONFORGE-FITNESS-/" target="_blank" class="project-link">View Project <i class="fas fa-arrow-right"></i></a>
                 </div>
             </div>
-
+            
             <!-- Project 2 -->
             <div class="project-card">
-                <div class="project-image">
-                    <i class="fas fa-shopping-bag"></i>
-                </div>
+                <img src="https://raw.githubusercontent.com/RuzannaMkrtumyan/Portfolio/2e58b7fb77f9390ef9b51883056355208cc57f07/Screenshot%202026-10-22%20230639.png" alt="Shopify Store" class="project-image">
                 <div class="project-info">
-                    <h3>Shopify E-Commerce Store</h3>
-                    <p>Full-scale e-commerce UI/UX design and development, optimized for conversions and seamless shopping experiences.</p>
+                    <h3>Shopify E-Commerce</h3>
+                    <p>Full-scale e-commerce store with custom UI/UX design and seamless shopping experience.</p>
                     <a href="https://ruzanna-mkrtumyan-yykcx7am.myshopify.com/" target="_blank" class="project-link">View Project <i class="fas fa-arrow-right"></i></a>
                 </div>
             </div>
-
+            
             <!-- Project 3 -->
             <div class="project-card">
-                <div class="project-image">
-                    <i class="fas fa-sun"></i>
-                </div>
+                <img src="https://raw.githubusercontent.com/RuzannaMkrtumyan/Portfolio/2e58b7fb77f9390ef9b51883056355208cc57f07/Screenshot%202026-10-22%20230750.png" alt="Summer Sale" class="project-image">
                 <div class="project-info">
                     <h3>Summer Sale Campaign</h3>
-                    <p>A high-converting promotional landing page designed to capture attention and drive seasonal sales effectively.</p>
+                    <p>High-converting promotional landing page for seasonal sales.</p>
                     <a href="https://ruzanna-mkrtumyan-yykcx7am.myshopify.com/pages/summer-sale-60" target="_blank" class="project-link">View Project <i class="fas fa-arrow-right"></i></a>
                 </div>
             </div>
-
+            
             <!-- Project 4 -->
             <div class="project-card">
-                <div class="project-image">
-                    <i class="fas fa-ghost"></i>
-                </div>
+                <img src="https://raw.githubusercontent.com/RuzannaMkrtumyan/Portfolio/2e58b7fb77f9390ef9b51883056355208cc57f07/Screenshot%202026-10-22%20230915.png" alt="Halloween Landing" class="project-image">
                 <div class="project-info">
                     <h3>Halloween Landing Page</h3>
-                    <p>Thematic, engaging seasonal campaign landing page with immersive visuals and strategic call-to-action placement.</p>
+                    <p>Thematic seasonal campaign landing page with immersive visuals.</p>
                     <a href="https://ruzanna-mkrtumyan-yykcx7am.myshopify.com/pages/landing-page-halloween" target="_blank" class="project-link">View Project <i class="fas fa-arrow-right"></i></a>
                 </div>
             </div>
         </div>
     </section>
-
+    
     <!-- Contact Section -->
-    <section id="contact" class="contact reveal">
+    <section id="contact" class="contact">
         <h2 class="section-title">Let's Work Together</h2>
-        <p>Have a project in mind? I'm always open to discussing new opportunities, creative ideas, or ways to help your business grow through exceptional design and development.</p>
-        
-        <!-- WhatsApp Contact Button -->
+        <p>Have a project in mind? I'm always open to discussing new opportunities and creative ideas to help your business grow.</p>
         <a href="https://wa.me/37494408199" target="_blank" class="whatsapp-btn">
-            <i class="fab fa-whatsapp"></i>
+            <i class="fab fa-whatsapp" style="font-size: 1.5rem;"></i>
             Contact with me on WhatsApp
         </a>
     </section>
-
+    
     <!-- Footer -->
     <footer>
-        <p>&copy; 2026 Ruzanna Mkrtumyan. All rights reserved. Crafted with <i class="fas fa-heart" style="color: var(--accent);"></i> and clean code.</p>
+        <p>&copy; 2026 Ruzanna Mkrtumyan. All rights reserved. Crafted with clean code.</p>
     </footer>
-
-    <!-- JavaScript for Scroll Animations -->
-    <script>
-        // Scroll Reveal Animation
-        function reveal() {
-            var reveals = document.querySelectorAll(".reveal");
-            for (var i = 0; i < reveals.length; i++) {
-                var windowHeight = window.innerHeight;
-                var elementTop = reveals[i].getBoundingClientRect().top;
-                var elementVisible = 150;
-                if (elementTop < windowHeight - elementVisible) {
-                    reveals[i].classList.add("active");
-                }
-            }
-        }
-        window.addEventListener("scroll", reveal);
-        // Trigger once on load
-        reveal();
-    </script>
 </body>
 </html>
