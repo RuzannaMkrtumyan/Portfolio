@@ -1,0 +1,716 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ruzanna Mkrtumyan — Shopify Specialist | E-commerce Support</title>
+<meta name="description" content="Ruzanna Mkrtumyan — Shopify Specialist focused on store management, product listings, collections, inventory and storefront updates.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#f7f4ee;
+    --paper-2:#efe9de;
+    --card:#fffdf9;
+    --ink:#1a231e;
+    --ink-2:#4d564f;
+    --ink-3:#777f78;
+    --line:#ddd6c8;
+    --accent:#a5623c;
+    --accent-2:#c58a63;
+    --display:"Cormorant Garamond", Georgia, "Times New Roman", serif;
+    --sans:"Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    --wrap:1180px;
+  }
+
+  *,*::before,*::after{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    margin:0;
+    background:var(--paper);
+    color:var(--ink);
+    font-family:var(--sans);
+    font-size:16px;
+    line-height:1.65;
+    -webkit-font-smoothing:antialiased;
+    text-rendering:optimizeLegibility;
+  }
+  img{max-width:100%;display:block}
+  a{color:inherit}
+  ::selection{background:var(--accent);color:#fff}
+
+  .wrap{width:min(100% - 48px, var(--wrap));margin-inline:auto}
+
+  .eyebrow{
+    font-size:11px;
+    letter-spacing:.22em;
+    text-transform:uppercase;
+    font-weight:500;
+    color:var(--accent);
+    margin:0 0 18px;
+    display:flex;
+    align-items:center;
+    gap:12px;
+  }
+  .eyebrow::before{
+    content:"";
+    width:34px;height:1px;background:currentColor;opacity:.6;
+  }
+  .eyebrow--plain::before{display:none}
+
+  h1,h2,h3{font-family:var(--display);font-weight:500;letter-spacing:-.01em;margin:0}
+
+  /* ---------- header ---------- */
+  .site-header{
+    position:sticky;top:0;z-index:50;
+    background:rgba(247,244,238,.82);
+    backdrop-filter:saturate(140%) blur(14px);
+    border-bottom:1px solid rgba(221,214,200,.7);
+  }
+  .site-header .wrap{
+    display:flex;align-items:center;justify-content:space-between;
+    min-height:72px;gap:24px;
+  }
+  .brand{
+    display:flex;align-items:center;gap:12px;
+    text-decoration:none;flex:none;
+  }
+  .brand__mark{
+    width:38px;height:38px;border-radius:50%;
+    display:grid;place-items:center;
+    border:1px solid var(--ink);
+    font-family:var(--display);font-size:16px;letter-spacing:.04em;
+  }
+  .brand__text{
+    font-size:11px;letter-spacing:.2em;text-transform:uppercase;font-weight:500;
+    line-height:1.3;
+  }
+  .brand__text span{display:block;color:var(--ink-3);font-size:9.5px;letter-spacing:.16em;margin-top:2px}
+
+  .nav{display:flex;align-items:center;gap:30px}
+  .nav a{
+    text-decoration:none;font-size:12px;letter-spacing:.14em;text-transform:uppercase;
+    color:var(--ink-2);padding:6px 0;position:relative;transition:color .2s ease;
+  }
+  .nav a::after{
+    content:"";position:absolute;left:0;right:100%;bottom:0;height:1px;
+    background:var(--accent);transition:right .28s ease;
+  }
+  .nav a:hover{color:var(--ink)}
+  .nav a:hover::after{right:0}
+  .nav__cta{
+    border:1px solid var(--ink);border-radius:999px;padding:10px 20px !important;
+    color:var(--ink) !important;transition:background .2s ease,color .2s ease;
+  }
+  .nav__cta::after{display:none}
+  .nav__cta:hover{background:var(--ink);color:var(--paper) !important}
+
+  /* ---------- hero ---------- */
+  .hero{position:relative;overflow:hidden;padding:clamp(44px,7vw,84px) 0 clamp(56px,8vw,96px)}
+  .hero::before{
+    content:"";position:absolute;inset:0;z-index:-1;
+    background:
+      radial-gradient(60% 60% at 82% 12%, rgba(197,138,99,.20), transparent 62%),
+      radial-gradient(46% 50% at 8% 88%, rgba(159,168,150,.22), transparent 66%);
+  }
+  .hero__grid{
+    display:grid;grid-template-columns:1.12fr .88fr;
+    gap:clamp(32px,6vw,78px);align-items:center;
+  }
+  .hero h1{
+    font-size:clamp(42px,6.3vw,80px);line-height:.98;
+    margin:0 0 22px;
+  }
+  .hero h1 em{
+    display:block;font-style:italic;color:var(--accent);
+    font-size:.62em;line-height:1.12;margin-top:10px;
+  }
+  .hero__lede{
+    font-size:clamp(15px,1.5vw,17px);color:var(--ink-2);
+    max-width:46ch;margin:0 0 30px;
+  }
+  .actions{display:flex;flex-wrap:wrap;gap:12px;margin-bottom:36px}
+  .btn{
+    display:inline-flex;align-items:center;gap:10px;
+    text-decoration:none;font-size:12px;font-weight:500;
+    letter-spacing:.14em;text-transform:uppercase;
+    padding:15px 26px;border-radius:999px;border:1px solid transparent;
+    transition:transform .2s ease,background .2s ease,color .2s ease,border-color .2s ease;
+  }
+  .btn--solid{background:var(--ink);color:var(--paper)}
+  .btn--solid:hover{background:var(--accent)}
+  .btn--ghost{border-color:var(--line);color:var(--ink);background:rgba(255,255,255,.4)}
+  .btn--ghost:hover{border-color:var(--ink);transform:translateY(-2px)}
+  .btn svg{width:13px;height:13px;flex:none}
+
+  .hero__facts{
+    display:grid;grid-template-columns:repeat(3,1fr);
+    gap:18px;border-top:1px solid var(--line);padding-top:22px;max-width:520px;
+  }
+  .hero__facts dt{
+    font-size:10px;letter-spacing:.16em;text-transform:uppercase;
+    color:var(--ink-3);margin-bottom:6px;
+  }
+  .hero__facts dd{margin:0;font-size:13px;line-height:1.45;color:var(--ink)}
+
+  .portrait{position:relative;justify-self:center;width:100%;max-width:420px}
+  .portrait__frame{
+    position:relative;padding:12px;background:var(--card);
+    border:1px solid var(--line);
+    border-radius:220px 220px 16px 16px;
+    box-shadow:0 26px 60px -34px rgba(26,35,30,.5);
+  }
+  .portrait img{
+    width:100%;height:auto;aspect-ratio:4/5;object-fit:cover;
+    border-radius:208px 208px 8px 8px;
+    filter:saturate(.98);
+  }
+  .portrait__tag{
+    position:absolute;left:-14px;bottom:46px;
+    background:var(--ink);color:var(--paper);
+    font-size:10px;letter-spacing:.18em;text-transform:uppercase;
+    padding:11px 16px;border-radius:3px;line-height:1.5;
+    box-shadow:0 16px 34px -20px rgba(26,35,30,.9);
+  }
+  .portrait__tag strong{display:block;font-weight:500;letter-spacing:.14em}
+
+  /* ---------- sections ---------- */
+  section{padding:clamp(56px,8vw,96px) 0}
+  .section-head{max-width:64ch;margin-bottom:clamp(30px,4vw,48px)}
+  .section-head h2{font-size:clamp(30px,4vw,46px);line-height:1.1}
+  .section-head p{color:var(--ink-2);margin:14px 0 0;font-size:15.5px}
+  .hairline{border:0;border-top:1px solid var(--line);margin:0}
+
+  /* about */
+  .about{background:var(--paper)}
+  .about__grid{display:grid;grid-template-columns:1fr .78fr;gap:clamp(28px,5vw,64px);align-items:start}
+  .about__body p{color:var(--ink-2);font-size:16.5px;margin:0 0 18px;max-width:60ch}
+  .about__body p:last-child{margin-bottom:0}
+  .about__body strong{font-weight:500;color:var(--ink)}
+  .fact-card{
+    background:var(--card);border:1px solid var(--line);border-radius:6px;
+    padding:clamp(24px,3vw,32px);
+  }
+  .fact-card__label{
+    font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--accent);
+    margin:0 0 20px;
+  }
+  .fact{margin-bottom:20px}
+  .fact:last-child{margin-bottom:0}
+  .fact dt{font-size:13.5px;font-weight:500;letter-spacing:.01em;margin-bottom:3px}
+  .fact dd{margin:0;font-size:13.5px;color:var(--ink-3);line-height:1.55}
+
+  /* services */
+  .services{background:var(--paper-2)}
+  .services__grid{
+    display:grid;grid-template-columns:repeat(3,1fr);
+    gap:1px;background:var(--line);border:1px solid var(--line);border-radius:6px;
+    overflow:hidden;
+  }
+  .service{
+    background:var(--paper-2);padding:clamp(22px,2.6vw,30px);
+    display:flex;flex-direction:column;gap:10px;
+    transition:background .25s ease;
+  }
+  .service:hover{background:var(--card)}
+  .service__num{font-family:var(--display);font-size:13px;color:var(--accent);letter-spacing:.08em}
+  .service h3{font-size:19px;line-height:1.25}
+  .service p{margin:0;font-size:13.5px;color:var(--ink-3);line-height:1.6}
+
+  /* skills */
+  .skills{background:var(--paper)}
+  .chips{display:flex;flex-wrap:wrap;gap:10px;margin:0;padding:0;list-style:none}
+  .chips li{
+    border:1px solid var(--line);border-radius:999px;
+    padding:9px 18px;font-size:13px;color:var(--ink-2);
+    background:rgba(255,255,255,.45);transition:border-color .2s ease,color .2s ease;
+  }
+  .chips li:hover{border-color:var(--accent);color:var(--ink)}
+
+  /* work */
+  .work{background:var(--paper-2)}
+  .projects{display:grid;grid-template-columns:repeat(2,1fr);gap:clamp(20px,3vw,34px)}
+  .project{
+    display:flex;flex-direction:column;text-decoration:none;
+    background:var(--card);border:1px solid var(--line);border-radius:6px;
+    overflow:hidden;
+    transition:transform .3s ease,box-shadow .3s ease,border-color .3s ease;
+  }
+  .project:hover{
+    transform:translateY(-4px);
+    border-color:#cfc5b3;
+    box-shadow:0 28px 50px -34px rgba(26,35,30,.45);
+  }
+  .project__media{position:relative;overflow:hidden;background:#e6e0d4}
+  .project__media img{
+    width:100%;height:auto;aspect-ratio:16/10;object-fit:cover;
+    transition:transform .55s cubic-bezier(.2,.7,.2,1);
+  }
+  .project:hover .project__media img{transform:scale(1.035)}
+  .project__body{padding:22px 24px 26px;display:flex;flex-direction:column;gap:8px;flex:1}
+  .project__meta{
+    display:flex;justify-content:space-between;align-items:center;gap:14px;
+    font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--ink-3);
+  }
+  .project__meta .dot{color:var(--accent)}
+  .project h3{font-size:24px;line-height:1.15}
+  .project p{margin:0;font-size:13.5px;color:var(--ink-3);line-height:1.62;max-width:44ch}
+  .project__link{
+    margin-top:14px;font-size:11px;letter-spacing:.16em;text-transform:uppercase;
+    color:var(--ink);display:inline-flex;align-items:center;gap:8px;
+  }
+  .project__link svg{width:12px;height:12px;transition:transform .2s ease}
+  .project:hover .project__link svg{transform:translate(2px,-2px)}
+  .project:hover .project__link{color:var(--accent)}
+
+  /* roles */
+  .roles{background:var(--paper)}
+  .roles__list{list-style:none;margin:0;padding:0;border-top:1px solid var(--line)}
+  .roles__list li{
+    display:flex;align-items:baseline;gap:20px;
+    padding:20px 4px;border-bottom:1px solid var(--line);
+    font-family:var(--display);font-size:clamp(20px,2.4vw,26px);line-height:1.2;
+  }
+  .roles__list li span{
+    font-family:var(--sans);font-size:10.5px;letter-spacing:.18em;text-transform:uppercase;
+    color:var(--accent);flex:none;width:44px;
+  }
+
+  /* contact */
+  .contact{
+    background:var(--ink);color:#e9e5dc;
+    padding:clamp(64px,9vw,110px) 0 44px;position:relative;overflow:hidden;
+  }
+  .contact::before{
+    content:"";position:absolute;inset:0;
+    background:radial-gradient(50% 70% at 85% 10%, rgba(165,98,60,.32), transparent 65%);
+    pointer-events:none;
+  }
+  .contact .wrap{position:relative}
+  .contact .eyebrow{color:var(--accent-2)}
+  .contact h2{
+    font-size:clamp(34px,5.4vw,64px);line-height:1.04;max-width:22ch;
+    color:#fdfbf6;
+  }
+  .contact h2 em{font-style:italic;color:var(--accent-2)}
+  .contact__grid{
+    display:grid;grid-template-columns:1.15fr .85fr;gap:clamp(30px,5vw,64px);
+    align-items:end;margin-top:34px;
+  }
+  .contact__note{color:#b8b3a7;font-size:15px;max-width:40ch;margin:0}
+  .contact__links{display:flex;flex-direction:column;gap:14px;align-items:flex-start}
+  .contact__mail{
+    font-family:var(--display);font-size:clamp(21px,2.6vw,28px);
+    color:#fdfbf6;text-decoration:none;border-bottom:1px solid rgba(253,251,246,.3);
+    padding-bottom:4px;transition:border-color .2s ease,color .2s ease;
+  }
+  .contact__mail:hover{border-color:var(--accent-2);color:var(--accent-2)}
+  .contact__btn{
+    display:inline-flex;align-items:center;gap:10px;text-decoration:none;
+    background:var(--paper);color:var(--ink);border-radius:999px;
+    padding:15px 26px;font-size:12px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;
+    transition:background .2s ease,color .2s ease;
+  }
+  .contact__btn:hover{background:var(--accent-2);color:#1a231e}
+  .site-footer{
+    margin-top:clamp(48px,7vw,76px);padding-top:26px;
+    border-top:1px solid rgba(233,229,220,.16);
+    display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap;
+    font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#8e8a80;
+  }
+  .site-footer a{text-decoration:none;color:#c9c4b9}
+  .site-footer a:hover{color:#fdfbf6}
+
+  /* reveal */
+  [data-reveal]{opacity:0;transform:translateY(18px);transition:opacity .7s ease,transform .7s ease}
+  [data-reveal].is-in{opacity:1;transform:none}
+
+  @media (prefers-reduced-motion: reduce){
+    html{scroll-behavior:auto}
+    [data-reveal]{opacity:1;transform:none;transition:none}
+    .project,.project__media img{transition:none}
+  }
+
+  /* ---------- responsive ---------- */
+  @media (max-width:980px){
+    .hero__grid{grid-template-columns:1fr;gap:44px}
+    .portrait{max-width:340px;justify-self:start}
+    .about__grid{grid-template-columns:1fr}
+    .services__grid{grid-template-columns:repeat(2,1fr)}
+    .contact__grid{grid-template-columns:1fr;align-items:start}
+  }
+  @media (max-width:760px){
+    .wrap{width:min(100% - 36px, var(--wrap))}
+    .nav a:not(.nav__cta){display:none}
+    .brand__text{font-size:10px}
+    .hero__facts{grid-template-columns:1fr 1fr;gap:16px}
+    .projects{grid-template-columns:1fr}
+    .portrait__tag{left:0;bottom:24px}
+  }
+  @media (max-width:560px){
+    .services__grid{grid-template-columns:1fr}
+    .hero__facts{grid-template-columns:1fr}
+    .portrait{max-width:300px}
+    .roles__list li{flex-direction:column;gap:4px}
+    .roles__list li span{width:auto}
+  }
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="#top" aria-label="Ruzanna Mkrtumyan — home">
+      <span class="brand__mark">RM</span>
+      <span class="brand__text">Ruzanna Mkrtumyan<span>Shopify Specialist</span></span>
+    </a>
+    <nav class="nav" aria-label="Main">
+      <a href="#profile">Profile</a>
+      <a href="#services">Services</a>
+      <a href="#skills">Skills</a>
+      <a href="#work">Work</a>
+      <a class="nav__cta" href="#contact">Get in touch</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+
+  <section class="hero">
+    <div class="wrap hero__grid">
+      <div>
+        <p class="eyebrow">E-commerce Support · Store Management</p>
+        <h1>
+          Shopify Specialist.
+          <em>Keeping stores accurate, organised and ready to sell.</em>
+        </h1>
+        <p class="hero__lede">
+          I help e-commerce brands run their Shopify stores day to day — product uploads and
+          listings, descriptions, pricing and variants, collections, inventory and storefront
+          content updates.
+        </p>
+        <div class="actions">
+          <a class="btn btn--solid" href="#work">
+            View my work
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </a>
+          <a class="btn btn--ghost" href="#contact">Get in touch</a>
+        </div>
+        <dl class="hero__facts">
+          <div>
+            <dt>Focus</dt>
+            <dd>Shopify store management</dd>
+          </div>
+          <div>
+            <dt>Background</dt>
+            <dd>Customer service, Unibank</dd>
+          </div>
+          <div>
+            <dt>Working style</dt>
+            <dd>Detail-oriented &amp; reliable</dd>
+          </div>
+        </dl>
+      </div>
+
+      <figure class="portrait">
+        <div class="portrait__frame">
+          <img src="assets/profile.jpg" alt="Portrait of Ruzanna Mkrtumyan" width="900" height="1125" fetchpriority="high">
+        </div>
+        <figcaption class="portrait__tag">
+          <strong>Shopify Specialist</strong>
+          E-commerce support
+        </figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <section class="about" id="profile">
+    <div class="wrap">
+      <div class="section-head" data-reveal>
+        <p class="eyebrow">01 — Profile</p>
+        <h2>A specialist for the details that keep a store running.</h2>
+      </div>
+
+      <div class="about__grid">
+        <div class="about__body" data-reveal>
+          <p>
+            I'm a <strong>Shopify Specialist</strong> focused on e-commerce store management,
+            product listings and storefront updates. I work through the details customers
+            notice: clean product pages, correct pricing and variants, tidy collections and
+            content that is always current.
+          </p>
+          <p>
+            I also have professional customer service experience, where I developed strong
+            communication and support skills. As a Call Center Specialist at
+            <strong>Unibank</strong>, I learned that patience, accuracy and clear answers matter
+            as much as the technical side of the work.
+          </p>
+          <p>
+            I'm responsible and detail-oriented, and I'm happy to learn your workflow so the
+            work matches the way your team already operates.
+          </p>
+        </div>
+
+        <aside class="fact-card" data-reveal>
+          <p class="fact-card__label">At a glance</p>
+          <dl>
+            <div class="fact">
+              <dt>Shopify training &amp; store experience</dt>
+              <dd>Product listings, collections, inventory, pricing and storefront updates.</dd>
+            </div>
+            <div class="fact">
+              <dt>Call Center Specialist — Unibank</dt>
+              <dd>Professional customer communication, order and request handling.</dd>
+            </div>
+            <div class="fact">
+              <dt>Detail-oriented by default</dt>
+              <dd>Accurate product data, variants and order information, checked before delivery.</dd>
+            </div>
+          </dl>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <section class="services" id="services">
+    <div class="wrap">
+      <div class="section-head" data-reveal>
+        <p class="eyebrow">02 — Services</p>
+        <h2>What I can help your store with.</h2>
+        <p>Day-to-day Shopify support, from setting up a store to keeping it updated and shoppable.</p>
+      </div>
+
+      <div class="services__grid">
+        <article class="service" data-reveal>
+          <span class="service__num">01</span>
+          <h3>Shopify store setup &amp; management</h3>
+          <p>Getting a store live and keeping day-to-day operations running smoothly.</p>
+        </article>
+        <article class="service" data-reveal>
+          <span class="service__num">02</span>
+          <h3>Product uploads &amp; listings</h3>
+          <p>Uploading products with clean titles, images, tags and correct category placement.</p>
+        </article>
+        <article class="service" data-reveal>
+          <span class="service__num">03</span>
+          <h3>Descriptions, pricing &amp; variants</h3>
+          <p>Clear product descriptions and correctly configured prices, sizes and options.</p>
+        </article>
+        <article class="service" data-reveal>
+          <span class="service__num">04</span>
+          <h3>Collections &amp; inventory</h3>
+          <p>Organising products into collections and keeping stock levels aligned.</p>
+        </article>
+        <article class="service" data-reveal>
+          <span class="service__num">05</span>
+          <h3>Store content updates</h3>
+          <p>Refreshing banners, page copy and seasonal storefront content.</p>
+        </article>
+        <article class="service" data-reveal>
+          <span class="service__num">06</span>
+          <h3>Basic theme customization</h3>
+          <p>Small layout and styling changes using Shopify's own theme tools.</p>
+        </article>
+        <article class="service" data-reveal>
+          <span class="service__num">07</span>
+          <h3>Customer support &amp; orders</h3>
+          <p>Answering customer questions and supporting order-related tasks.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="skills" id="skills">
+    <div class="wrap">
+      <div class="section-head" data-reveal>
+        <p class="eyebrow">03 — Skills</p>
+        <h2>The toolkit.</h2>
+      </div>
+      <ul class="chips" data-reveal>
+        <li>Shopify</li>
+        <li>Shopify Store Management</li>
+        <li>E-commerce</li>
+        <li>Product Listing</li>
+        <li>Product Upload</li>
+        <li>Product Description Writing</li>
+        <li>Customer Support</li>
+        <li>Customer Service</li>
+        <li>Order Processing Support</li>
+        <li>Administrative Support</li>
+        <li>Data Entry</li>
+        <li>Written Communication</li>
+        <li>Attention to Detail</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="work" id="work">
+    <div class="wrap">
+      <div class="section-head" data-reveal>
+        <p class="eyebrow">04 — Selected work</p>
+        <h2>Stores and sites I've built.</h2>
+        <p>Live projects — a Shopify store, campaign landing pages, and complete business websites.</p>
+      </div>
+
+      <div class="projects">
+        <a class="project" href="https://ruzanna-mkrtumyan-yykcx7am.myshopify.com/" target="_blank" rel="noopener noreferrer" data-reveal>
+          <div class="project__media">
+            <img src="assets/shopify-store.jpg" alt="Bellezza clothing store Shopify storefront with a winter collection banner" width="1400" height="875" loading="lazy">
+          </div>
+          <div class="project__body">
+            <div class="project__meta"><span>Shopify · Store management</span><span class="dot">●</span></div>
+            <h3>Shopify Store</h3>
+            <p>A Shopify storefront where I manage product listings, collections, pricing and storefront content updates.</p>
+            <span class="project__link">
+              Visit the store
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8"/></svg>
+            </span>
+          </div>
+        </a>
+
+        <a class="project" href="https://ruzanna-mkrtumyan-yykcx7am.myshopify.com/pages/landing-page-halloween" target="_blank" rel="noopener noreferrer" data-reveal>
+          <div class="project__media">
+            <img src="assets/halloween-landing.jpg" alt="Halloween landing page in Shopify with the headline Unleash The Halloween Magic" width="1400" height="875" loading="lazy">
+          </div>
+          <div class="project__body">
+            <div class="project__meta"><span>Shopify · Campaign page</span><span class="dot">●</span></div>
+            <h3>Halloween Landing Page</h3>
+            <p>A seasonal Halloween 2026 collection page built in Shopify, with a themed hero, story section and shop-collection calls to action.</p>
+            <span class="project__link">
+              View the page
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8"/></svg>
+            </span>
+          </div>
+        </a>
+
+        <a class="project" href="https://ruzanna-mkrtumyan-yykcx7am.myshopify.com/pages/summer-sale-60" target="_blank" rel="noopener noreferrer" data-reveal>
+          <div class="project__media">
+            <img src="assets/summer-sale-landing.jpg" alt="Summer sale landing page in Shopify advertising up to 50% off" width="1400" height="875" loading="lazy">
+          </div>
+          <div class="project__body">
+            <div class="project__meta"><span>Shopify · Sale page</span><span class="dot">●</span></div>
+            <h3>Summer Sale Landing Page</h3>
+            <p>A Shopify landing page for a seasonal sale event, with editorial typography, discount messaging and a shop-the-collection call to action.</p>
+            <span class="project__link">
+              View the page
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8"/></svg>
+            </span>
+          </div>
+        </a>
+
+        <a class="project" href="https://ruzannamkrtumyan.github.io/IRONFORGE-FITNESS-/" target="_blank" rel="noopener noreferrer" data-reveal>
+          <div class="project__media">
+            <img src="assets/ironforge.jpg" alt="IRONFORGE Fitness website hero with the headline Build Your Strongest Self" width="1400" height="875" loading="lazy">
+          </div>
+          <div class="project__body">
+            <div class="project__meta"><span>Website · Fitness</span><span class="dot">●</span></div>
+            <h3>IRONFORGE Fitness</h3>
+            <p>A bold, high-contrast gym site covering programs, trainers, membership plans and contact details.</p>
+            <span class="project__link">
+              View live site
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8"/></svg>
+            </span>
+          </div>
+        </a>
+
+        <a class="project" href="https://ruzannamkrtumyan.github.io/stomatology/" target="_blank" rel="noopener noreferrer" data-reveal>
+          <div class="project__media">
+            <img src="assets/stomatology.jpg" alt="BrightSmile stomatology clinic website hero with appointment buttons" width="1400" height="875" loading="lazy">
+          </div>
+          <div class="project__body">
+            <div class="project__meta"><span>Website · Healthcare</span><span class="dot">●</span></div>
+            <h3>BrightSmile Stomatology</h3>
+            <p>A calm, trust-building dental clinic site with services, doctors, appointment and contact sections.</p>
+            <span class="project__link">
+              View live site
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8"/></svg>
+            </span>
+          </div>
+        </a>
+
+        <a class="project" href="https://ruzannamkrtumyan.github.io/Cleaning-Company/" target="_blank" rel="noopener noreferrer" data-reveal>
+          <div class="project__media">
+            <img src="assets/cleaning.jpg" alt="Maison Clère cleaning company website with editorial serif headline" width="1400" height="875" loading="lazy">
+          </div>
+          <div class="project__body">
+            <div class="project__meta"><span>Website · Services</span><span class="dot">●</span></div>
+            <h3>Maison Clère Cleaning</h3>
+            <p>An editorial-style site for a cleaning atelier, with services, process, clients and visit requests.</p>
+            <span class="project__link">
+              View live site
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8"/></svg>
+            </span>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="roles">
+    <div class="wrap">
+      <div class="section-head" data-reveal>
+        <p class="eyebrow">05 — Roles</p>
+        <h2>Roles I take on.</h2>
+      </div>
+      <ul class="roles__list" data-reveal>
+        <li><span>01</span>Shopify Virtual Assistant</li>
+        <li><span>02</span>Shopify Product Listing Specialist</li>
+        <li><span>03</span>E-commerce Assistant</li>
+        <li><span>04</span>Shopify Store Management Assistant</li>
+        <li><span>05</span>Customer Support Specialist for E-commerce Stores</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="contact" id="contact">
+    <div class="wrap">
+      <p class="eyebrow">06 — Contact</p>
+      <h2>Have a store that needs <em>a reliable pair of hands?</em></h2>
+
+      <div class="contact__grid">
+        <p class="contact__note">
+          Tell me a little about the tasks you need help with — product listings, store updates,
+          collections or customer support — and I'll come back to you with how I can help.
+          Available for part-time and project-based Shopify work.
+        </p>
+        <div class="contact__links">
+          <a class="contact__mail" href="mailto:ruzmkrtumyan@gmail.com">ruzmkrtumyan@gmail.com</a>
+          <a class="contact__btn" href="mailto:ruzmkrtumyan@gmail.com?subject=Shopify%20store%20project">
+            Email me
+            <svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <footer class="site-footer">
+        <span>© <span id="year">2026</span> Ruzanna Mkrtumyan</span>
+        <span>Shopify Specialist · E-commerce Support</span>
+        <a href="#top">Back to top ↑</a>
+      </footer>
+    </div>
+  </section>
+
+</main>
+
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+  const revealItems = document.querySelectorAll('[data-reveal]');
+  if ('IntersectionObserver' in window) {
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-in');
+          io.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+    revealItems.forEach((item) => io.observe(item));
+  } else {
+    revealItems.forEach((item) => item.classList.add('is-in'));
+  }
+
+</script>
+</body>
+</html>
